@@ -5,11 +5,11 @@
 data <- read.csv("household_power_consumption.txt", na.string="?", sep=";")
 
 # Extract needed dataset
-data <- data[(data$Date=="2/1/2007" | data$Date=="2/2/2007"),]
+data <- data[(data$Date=="1/2/2007" | data$Date=="2/2/2007"),]
 
 # Combining Date and Time
 data$DateTime <- strptime(paste(data$Date, data$Time, sep=" "), 
-                          format="%m/%d/%Y %H:%M:%S")
+                          format="%d/%m/%Y %H:%M:%S")
 
 # Open png device
 png("plot2.png", width=480, height=480)
